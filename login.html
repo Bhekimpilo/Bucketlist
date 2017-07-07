@@ -4,24 +4,32 @@
 
 	<style type="text/css">
 	body{
-		width: 250px;
+		width: 40%;
 		padding-top: 40px;
-		margin: auto;		
+		margin: auto;
+		background-color: e3e3e3;		
 	}
 
+	input{
+		width: 100%;
+		font-size: 16;
+	}
+
+	h2{margin: center;}
 	</style>
 </head>
 
 <body>
-<h2>Login Page</h2>
+<h1>Login Page</h1>
 <input type="text" id="nameField" placeholder="Username"><br><br>
 <input type="password" id="passField" placeholder="Password"><br><br>
-<button onclick="checkText()"> Login </button>
+<button onclick="checkText()" style="font-size: 16;"> Login </button>
 
 
 <script>
 
 function checkText(){
+
 
 	var username = nameField.value.trim();
 	var password = passField.value.trim();
