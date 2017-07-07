@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Login Page</title>
+
+	<style type="text/css">
+	body{
+		width: 250px;
+		padding-top: 40px;
+		margin: auto;		
+	}
+
+	</style>
+</head>
+
+<body>
+<h2>Login Page</h2>
+<input type="text" id="nameField" placeholder="Username"><br><br>
+<input type="password" id="passField" placeholder="Password"><br><br>
+<button onclick="checkText()"> Login </button>
+
+
+<script>
+
+function checkText(){
+
+	var username = nameField.value.trim();
+	var password = passField.value.trim();
+
+	if (username === "" || password === "") {
+		alert('Please enter all the required text');
+	}else{
+
+		window.location = "bucketlist.html";
+		
+	};
+}
+
+</script>
+
+</body>
+
+</html>

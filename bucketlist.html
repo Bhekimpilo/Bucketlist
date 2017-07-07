@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>Bucketlist</title>
+<style type="text/css">
+body{
+	width: 250px;
+	margin: auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>My Bucketlist</h1>
+
+<!--Create a fields and a button-->
+<input type="text" id="item"/>
+<button onclick="checkInput()">Add Item</button>
+
+<!--Declare an ordered list and leave it blank for now-->
+<ol id="list"></ol>
+
+<script>
+
+/*This function checks if the field is blank or has unnecessary 
+  white spaces which it would trim.
+*/
+function checkInput(){
+
+	var typedText = item.value.trim();
+
+	if (typedText === "") {
+		alert('Input cannot be blank');
+	}else{
+
+		addItem();
+		//reset field to blank and bring cursor inside
+		item.value = '';
+		item.focus();
+	};
+}
+
+function addItem(){
+		
+		//Store the typed text in a variable
+		var myText = document.getElementById("item").value;		
+		var text = document.createTextNode(myText);
+		//Checkbox to help keep track of completed tasks
+		var checkbox = document.createElement('input');
+		checkbox.type = 'checkbox';
+		checkbox.addEventListener('click', onCheck);
+
+		var newItem = document.createElement("li");
+		//Make each task a list item and give it a checkbox
+		newItem.appendChild(text);
+		newItem.appendChild(checkbox);
+
+		document.getElementById("list").appendChild(newItem);			
+		
+};
+		/*Return the checked boxes and verify that the user 
+		intentionally checked before removing a task*/
+var onCheck = function(event){
+
+			alert('Are you sure you want to delete items?');
+			var task = event.target.parentElement;
+			var listItem = task.parentElement.id;
+			
+			document.getElementById(listItem).remove();
+
+		/*P.S Didnt really understand the logic of the parentElement
+		hence the remove function deletes the entire list. Kindly 
+		assist in this regard*/
+
+		};
+</script>
+
+</body>
+</html>
