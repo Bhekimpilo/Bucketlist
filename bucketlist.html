@@ -20,6 +20,7 @@ input{font-size: 16;}
 <input type="text" id="item"/>
 <button onclick="checkInput()" style="font-size: 16;">Add Item</button>
 
+
 <!--Declare an ordered list and leave it blank for now-->
 <ol id="list"></ol>
 
@@ -48,6 +49,7 @@ function addItem(){
 		//Store the typed text in a variable
 		var myText = document.getElementById("item").value;		
 		var text = document.createTextNode(myText);
+		
 		//Checkbox to help keep track of completed tasks
 		var checkbox = document.createElement('input');
 		checkbox.type = 'checkbox';
